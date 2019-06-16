@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 	<name>Spring Boot Web JSP Example</name>
 	<description>Spring Boot Web JSP Example</description>
-	<url>https://www.mkyong.com</url>
+	
 	<version>1.0</version>
 
 	<parent>
