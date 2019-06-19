@@ -21,5 +21,11 @@ public class HomeController {
 		model.addAttribute("data_json", json);
 		return "home";
 	}
+	@RequestMapping("/load")
+	public String load(Model model) throws JsonProcessingException
+	{
+		
+		return "load";
+	}
 	
 }
