@@ -1,0 +1,30 @@
+2019-06-25 11:36:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS TB_CUST_MASTER( ID INTEGER NOT NULL, USER_NAME VARCHAR (200), FIRST_NAME VARCHAR(100), LAST_NAME VARCHAR(100) USER_EMAIL[*] VARCHAR(255) , DOJ TIMESTAMP, CREATED_BY VARCHAR(255), CREATED_DT TIMESTAMP, MODIFIED_BY VARCHAR(255), MODIFIED_DT TIMESTAMP, PRIMARY KEY (ID)) ) "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+create table IF NOT EXISTS TB_CUST_MASTER( ID integer not null, USER_NAME varchar (200), FIRST_NAME varchar(100), LAST_NAME varchar(100) USER_EMAIL varchar(255) , DOJ TIMESTAMP, CREATED_BY varchar(255), CREATED_DT TIMESTAMP, MODIFIED_BY varchar(255), MODIFIED_DT TIMESTAMP, PRIMARY KEY (ID)) ) [42001-199]
+2019-06-25 11:39:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS TB_CUST_MASTER( ID INTEGER NOT NULL, USER_NAME VARCHAR (200), FIRST_NAME VARCHAR(100), LAST_NAME VARCHAR(100) USER_EMAIL[*] VARCHAR(255) , DOJ TIMESTAMP, CREATED_BY VARCHAR(255), CREATED_DT TIMESTAMP, MODIFIED_BY VARCHAR(255), MODIFIED_DT TIMESTAMP, PRIMARY KEY (ID)) ) "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+create table IF NOT EXISTS TB_CUST_MASTER( ID integer not null, USER_NAME varchar (200), FIRST_NAME varchar(100), LAST_NAME varchar(100) USER_EMAIL varchar(255) , DOJ TIMESTAMP, CREATED_BY varchar(255), CREATED_DT TIMESTAMP, MODIFIED_BY varchar(255), MODIFIED_DT TIMESTAMP, PRIMARY KEY (ID)) ) [42001-199]
+2019-06-25 13:42:09 jdbc[52]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:242)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:182)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:706)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:692)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 18 more
