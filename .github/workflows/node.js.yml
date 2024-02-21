@@ -24,4 +24,7 @@ jobs:
     - name: test command
       run: |
         echo "[LS]: $(ls -al)"
+        test = $(curl -v "https://docker.io")
+        echo "curl $test"
+      shell: bash  
     
