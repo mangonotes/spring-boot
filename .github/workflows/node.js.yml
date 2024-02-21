@@ -24,7 +24,7 @@ jobs:
     - name: test command
       run: |
         echo "[LS]: $(ls -al)"
-        test = $(curl -v "https://registry.hub.docker.com/v2/repositories/hello-world/tags")
+        test = $(curl -v "https://index.docker.io/v2/")
         echo "curl $test"
       shell: bash  
     
